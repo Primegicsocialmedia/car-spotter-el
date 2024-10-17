@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import HomePage from './pages/HomePage';
+import DealershipPage from './pages/DealershipPage';
+import DealershipsPage from './pages/DealershipsPage';  // New Dealerships page
+import ContactPage from './pages/ContactsPage';  // New Contact page
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/dealership/:id" element={<DealershipPage />} />
+            <Route path="/dealerships" element={<DealershipsPage />} />  {/* Dealerships route */}
+            <Route path="/contact" element={<ContactPage />} />  {/* Contact form route */}
+          </Routes>
+        </div>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
 export default App;
+
+
