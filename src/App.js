@@ -2,8 +2,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import DealershipPage from './pages/DealershipPage';
-import DealershipsPage from './pages/DealershipsPage';  // New Dealerships page
-import ContactPage from './pages/ContactsPage';  // New Contact page
+
+import ContactPage from './pages/ContactsPage';
+import BargainPage from './pages/BargainPage';  // New Bargain Page
 import Footer from './components/Footer';
 
 function App() {
@@ -15,8 +16,9 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/dealership/:id" element={<DealershipPage />} />
-            <Route path="/dealerships" element={<DealershipsPage />} />  {/* Dealerships route */}
-            <Route path="/contact" element={<ContactPage />} />  {/* Contact form route */}
+            
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/bargains" element={<BargainPage />} />  {/* Bargain Route */}
           </Routes>
         </div>
         <Footer />
